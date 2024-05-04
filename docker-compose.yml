@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+
+  meme_api_service:
+    restart: on-failure
+    container_name: meme_api_service
+    build: meme_api_service/
+    ports:
+      - "8001:80"
+
+  meme_service:
+    restart: on-failure
+    container_name: meme_service
+    build: meme_service/
+    ports:
+      - "8000:80"
