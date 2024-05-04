@@ -1,8 +1,13 @@
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, status
 import requests
 
 app = FastAPI()
+
+
+@app.get("/health", status_code=status.HTTP_200_OK)
+async def service_alive():
+    return {'message': 'Service alive'}
 
 
 @app.get("/get_popular_memes")
