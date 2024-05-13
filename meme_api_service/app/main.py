@@ -4,7 +4,6 @@ import requests
 
 app = FastAPI()
 
-
 @app.get("/health", status_code=status.HTTP_200_OK)
 async def service_alive():
     return {'message': 'Service alive'}
