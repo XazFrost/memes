@@ -9,7 +9,6 @@ async def service_alive():
     return {'message': 'Service alive'}
 
 
-
 @app.get("/get_popular_memes")
 async def get_popular_memes():
     url = "https://api.imgflip.com/get_memes"
